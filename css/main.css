@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 161, 255),
+    rgb(76, 246, 252)
+  );
+  height: 100vh;
+}
+
+.block__list {
+  padding: 10px 20px;
+  background-color: #fff;
+  min-height: 500px;
+  border-radius: 3px;
+}
+
+.header {
+  border-bottom: 1px solid rgb(187, 186, 186);
+}
+
+.app .input__search button i {
+  color: black;
+}
+
+.app .input__search button {
+  background-color: #dcdddd;
+}

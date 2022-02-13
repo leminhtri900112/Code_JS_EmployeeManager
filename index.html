@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Quan Ly Nhan Vien</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <!-- font icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- CSS Main -->
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <div class="app d-flex align-items-center">
+      <div class="container block__list">
+        <div class="header d-flex p-2 justify-content-between">
+          <h2 class="text-primary">Danh sách nhân viên</h2>
+          <button
+            onclick="modal(1)"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#exampleModalCenter"
+          >
+            Thêm nhân viên
+          </button>
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="exampleModalCenter"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <form id="formNV">
+                    <h1 class="text-primary mb-4 text-center" id="title">
+                      Login
+                    </h1>
+                    <div class="item-input mb-3">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"
+                            ><i class="fas fa-user"></i
+                          ></span>
+                        </div>
+                        <input
+                          id="maNV"
+                          type="text"
+                          class="form-control inputModal"
+                          placeholder="Code"
+                        />
+                      </div>
+                      <span class="error"></span>
+                    </div>
+                    <div class="item-input mb-3">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"
+                            ><i class="fas fa-book"></i
+                          ></span>
+                        </div>
+                        <input
+                          id="tenNV"
+                          type="text"
+                          class="form-control inputModal"
+                          placeholder="Username"
+                        />
+                      </div>
+                      <span class="error"></span>
+                    </div>
+                    <div class="item-input mb-3">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"
+                            ><i class="fas fa-envelope"></i
+                          ></span>
+                        </div>
+                        <input
+                          id="emailNV"
+                          type="text"
+                          class="form-control inputModal"
+                          placeholder="Email"
+                        />
+                      </div>
+                      <span class="error"></span>
+                    </div>
+                    <div class="item-input mb-3">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"
+                            ><i class="fas fa-key"></i
+                          ></span>
+                        </div>
+                        <input
+                          id="passwordNV"
+                          type="password"
+                          class="form-control inputModal"
+                          placeholder="Password"
+                        />
+                      </div>
+                      <span class="error"></span>
+                    </div>
+                    <div class="item-input mb-3">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"
+                            ><i class="fas fa-calendar-alt"></i
+                          ></span>
+                        </div>
+                        <input
+                          id="dateNV"
+                          type="date"
+                          class="form-control inputModal"
+                        />
+                      </div>
+                      <span class="error"></span>
+                    </div>
+                    <div class="item-input mb-3">
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <label class="input-group-text" for="chucVuNV"
+                            ><i class="fas fa-briefcase"></i
+                          ></label>
+                        </div>
+                        <select class="custom-select inputModal" id="chucVuNV">
+                          <option selected>Choose...</option>
+                          <option value="Sếp">Sếp</option>
+                          <option value="Trưởng phòng">Trưởng phòng</option>
+                          <option value="Nhân viên">Nhân viên</option>
+                        </select>
+                      </div>
+                      <span class="error"></span>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    onclick="capNhatNV()"
+                    id="btnUpdate"
+                    type="button"
+                    class="btn btn-warning"
+                  >
+                    Update
+                  </button>
+                  <button
+                    onclick="themNV()"
+                    id="btnAdd"
+                    type="button"
+                    class="btn btn-primary"
+                  >
+                    Add User
+                  </button>
+                  <button
+                    onclick="clearForm()"
+                    id="closeForm"
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="input__search input-group my-3">
+          <input
+            id="searchNV"
+            type="text"
+            class="form-control"
+            placeholder="Tên nhân viên"
+            aria-label="Tên nhân viên"
+            aria-describedby="basic-addon2"
+          />
+          <div class="input-group-append">
+            <button
+              onclick="timNhanVienTheoTen()"
+              class="btn btn-secondary"
+              type="button"
+            >
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+        <table class="table table-bordered text-center">
+          <thead>
+            <tr class="text-primary">
+              <th>Mã</th>
+              <th>Họ và tên</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>Ngày sinh</th>
+              <th>Chức vụ</th>
+              <th><i class="fas fa-cog"></i></th>
+            </tr>
+          </thead>
+          <tbody id="tbodyNhanvien"></tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./js/validate.js"></script>
+    <script src="./js/NhanVien.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
